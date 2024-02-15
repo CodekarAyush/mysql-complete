@@ -212,3 +212,46 @@ ex : SELECT city FROM students GROUP BY city
 in this query , We have grouped the cities. but if we want to know how many students are studying in each cities .
 
  SELECT city , COUNT (rollno) FROM student GROUP BY city ;
+
+
+ **questions**
+ Write the query to find the avg marks in each city in accending order . 
+
+ SELECT city , AVG(marks) FROM students GROUP BY city ORDER BY ASC; 
+
+  Find the total payment according to each payment methods
+
+  SELECT mode , COUNT(customer) FROM payment GROUP BY mode;
+
+  How many students get that Particular grade 
+
+  SELECT grade , COUNT (roll_no) FROM students GROUP BY grade 
+
+
+  ## Advance clause
+
+  **Having clause** 
+  this is kind of same as where clause , but somehwere we are not able to use where clause then we use having . 
+    for example we have to select conditional data from Groupped coulumn .
+
+    suppose we have many groups and we have to apply the condition on that group.
+
+ex: SELECT count (name), city  FROM student GROUP BY city HAVINNG max(marks) > 90 ;
+
+
+**General order**
+
+SELECT columns
+FROM  table_name
+WHERE condition
+GROUP BY  column
+HAVING condition
+ORDER BY column ASC
+
+## Update , delete and other queries 
+
+**Update** 
+it is use to update existing data from the table
+ex: UPDATE table_name SET col1 = val1, col2 = val2 WHERE condition;
+
+NOTE:- *To turn off the mysql safe mode. we can use command SET SQL_SAFE_UPDATES=0;*
